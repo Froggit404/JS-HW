@@ -111,7 +111,7 @@
 // {
 //     function f(usersBlock) {
 //         for (const block of usersBlock) {
-//             document.write(`<ul><li>${block.id}-${block.name}-${block.age}</li></ul>`)
+//             document.write(`<div><ul><li>${block.id}</li><li>${block.name}</li><li>${block.age}</li></ul></div>`)
 //         }
 //
 //     }
@@ -191,13 +191,12 @@
 
 // {
 //     function exchange(sumUAH,currencyValues,exchangeCurrency){
-//         let chosenCurrency
 //         for (const item of currencyValues) {
 //             if (item.currency === exchangeCurrency){
-//                 chosenCurrency = item
+//                 return sumUAH / item.value
 //             }
 //         }
-//         return sumUAH / chosenCurrency.value
+//         return console.log('error!')
 //     }
 //     console.log(exchange(10000,[{currency:'USD',value:25},{currency:'EUR',value:42}],'USD'))
 //
