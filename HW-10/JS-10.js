@@ -139,9 +139,48 @@
 // addToLocalStorage(arrayName:string,objToAdd:any{}):void
 
 
-{
-
-}
+// {
+//     const form = document.createElement("form");
+//     document.body.appendChild(form)
+//     form.name = 'form'
+//
+//     const inputLines = document.createElement("input");
+//     inputLines.type = 'number'
+//     inputLines.name = 'inputLines'
+//
+//     const inputCells = document.createElement("input");
+//     inputCells.type = 'number'
+//     inputCells.name = 'inputCells'
+//
+//     const inputText = document.createElement("input");
+//     inputText.name = 'inputText'
+//
+//     const button = document.createElement("button");
+//     button.innerText = 'Generate'
+//     form.append(inputLines, inputCells, inputText, button)
+//
+//     const table = document.createElement("table");
+//     document.body.appendChild(table)
+//
+//     form.onsubmit = function (ev) {
+//         table.innerText = ""
+//         ev.preventDefault()
+//         const linesValue = +form.inputLines.value;
+//         const cellsValue = +form.inputCells.value;
+//         const textValue = form.inputText.value;
+//
+//         for (let i = 0; i < linesValue; i++) {
+//             const tr = document.createElement('tr');
+//
+//             for (let j = 0; j < cellsValue; j++) {
+//                 const td = document.createElement('td');
+//                 td.innerText = textValue
+//                 tr.appendChild(td)
+//             }
+//             table.appendChild(tr)
+//         }
+//     }
+// }
 
 
 // Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
