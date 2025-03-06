@@ -12,9 +12,9 @@ fetch('https://jsonplaceholder.typicode.com/users')
             const userInfo = document.createElement("button");
             userInfo.id = 'userInfo'
             userInfo.innerText = 'User info'
-            userInfo.addEventListener ('click',() => {
-                window.location.href = `user-detalis.html?id=${user.id}`
-            })
+            userInfo.onclick = function () {
+                window.location.href = `user-details.html?id=${user.id}`
+            }
 
             userCard.appendChild(userInfo)
             userHolder.appendChild(userCard)
