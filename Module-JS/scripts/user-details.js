@@ -7,25 +7,25 @@ fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
 
         const infoHolder = document.createElement("div");
         infoHolder.id = 'infoHolder'
-        infoHolder.innerText = `
-           id: ${user.id}
-           name: ${user.name}
-           username: ${user.username}
-           email: ${user.email}
-           address:
-           street: ${user.address.street}
-           suite: ${user.address.suite}
-           city: ${user.address.city}
-           zipcode: ${user.address.zipcode}
-           geo:
-           lat: ${user.address.geo.lat}
-           lng: ${user.address.geo.lng}
-           phone: ${user.phone}
-           website: ${user.website}
-           company:
-           name: ${user.company.name}
-           catchPhrase: ${user.company.catchPhrase}
-           bs: ${user.company.bs}
+        infoHolder.innerHTML = `
+           <p>id: ${user.id}</p>
+           <p>name: ${user.name}</p>
+           <p>username: ${user.username}</p>
+           <p>email: ${user.email}</p>
+           <p>address:</p>
+           <p>street: ${user.address.street}</p>
+           <p>suite: ${user.address.suite}</p>
+           <p>city: ${user.address.city}</p>
+           <p>zipcode: ${user.address.zipcode}</p>
+           <p>geo:</p>
+           <p>lat: ${user.address.geo.lat}</p>
+           <p>lng: ${user.address.geo.lng}</p>
+           <p>phone: ${user.phone}</p>
+           <p>website: ${user.website}</p>
+           <p>company:</p>
+           <p>name: ${user.company.name}</p>
+           <p>catchPhrase: ${user.company.catchPhrase}</p>
+           <p>bs: ${user.company.bs}</p>
            `
 
 
@@ -45,9 +45,9 @@ fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
                     for (const post of posts) {
                         const postHolder = document.createElement("div");
                         postHolder.id = 'postHolder'
-                        postHolder.innerText =
+                        postHolder.innerHTML =
                             `
-                            title: ${post.title}
+                            <p>title: ${post.title}</p>
                             `
                         const postInfo = document.createElement("button");
                         postInfo.id = 'postInfo'

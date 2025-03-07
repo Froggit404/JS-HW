@@ -10,12 +10,12 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
         for (const post of posts) {
             const postHolder = document.createElement("div");
             postHolder.id = 'postHolder'
-            postHolder.innerText =
+            postHolder.innerHTML =
                 `
-                id: ${post.id}
-                name: ${post.name}
-                email: ${post.email}
-                body: ${post.body}
+                <p>id: ${post.id}</p>
+                <p>name: ${post.name}</p>
+                <p>email: ${post.email}</p>
+                <p>body: ${post.body}</p>
                 `
             postsHolder.appendChild(postHolder)
             console.log(posts)
