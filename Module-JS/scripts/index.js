@@ -5,16 +5,17 @@ fetch('https://jsonplaceholder.typicode.com/users')
         for (const user of users) {
             const userCard = document.createElement("div");
             userCard.id = ('userCard')
-            userCard.innerHTML = `
-            <p>User id: ${user.id}</p>
-            <p>Name: ${user.name}</p>`;
-
+            userCard.innerHTML =
+                `
+                <p><b>User id: ${user.id}</b></p>
+                <p>Name: ${user.name}</p>
+                `
 
             const userInfo = document.createElement("button");
             userInfo.id = 'userInfo'
             userInfo.innerText = 'User info'
             userInfo.onclick = function () {
-                window.location.href = `user-details.html?id=${user.id}`
+                location.href = `user-details.html?id=${user.id}`
             }
 
             userCard.appendChild(userInfo)

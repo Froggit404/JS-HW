@@ -1,4 +1,4 @@
-const url = new URLSearchParams(window.location.search);
+const url = new URLSearchParams(location.search);
 const postId = url.get("postId");
 if (!postId) {
     alert("Can't find a post")
@@ -11,10 +11,14 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
             postDetailsHolder.id = 'postDetailsHolder'
             postDetailsHolder.innerHTML =
                 `
-                  <p>User id: ${post.userId}</p>
-                  <p>Post id: ${post.id}</p>
-                  <p>Title: ${post.title}</p>
-                  <p>Body: ${post.body}</p>
+                  <div id="idBlock">
+                  <p><b>User id:</b> ${post.userId}</p>
+                  <p><b>Post id:</b> ${post.id}</p>
+                  </div>
+                  <div id="textBlock">
+                  <p><b>Title:</b> ${post.title}</p>
+                  <p><b>Body:</b> ${post.body}</p>
+                  </div>
                 `
 
 
@@ -29,10 +33,10 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
                     commentHolder.id = 'commentHolder'
                     commentHolder.innerHTML =
                         `
-                <p>Id: ${post.id}</p>
-                <p>Name: ${post.name}</p>
-                <p>Email: ${post.email}</p>
-                <p>Body: ${post.body}</p>
+                <p><b>Id:</b> ${comment.id}</p>
+                <p><b>Name:</b> ${comment.name}</p>
+                <p><b>Email:</b> ${comment.email}</p>
+                <p><b>Body:</b> ${comment.body}</p>
                 `
                     commentsHolder.appendChild(commentHolder)
 
@@ -40,10 +44,11 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
                 document.body.append(postDetailsHolder, commentsHolder)
             })
 
-            .catch(error => {
-                console.error('Error uploading comments:', error);
-                alert('Error uploading comments');
-            });
+
     })
+    .catch(error => {
+        console.error('Error uploading comments:', error);
+        alert('Error uploading comments');
+    });
 
 
