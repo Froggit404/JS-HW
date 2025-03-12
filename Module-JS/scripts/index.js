@@ -7,7 +7,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
             userCard.id = ('userCard')
             userCard.innerHTML = `
             <p>User id: ${user.id}</p>
-            <p>User name: ${user.name}</p>`;
+            <p>Name: ${user.name}</p>`;
 
 
             const userInfo = document.createElement("button");
@@ -21,3 +21,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
             userHolder.appendChild(userCard)
         }
     })
+    .catch(error => {
+        console.error('Error uploading users:', error);
+        alert('Error uploading users');
+    });
