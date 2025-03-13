@@ -53,7 +53,7 @@ div#userHolder {
     margin: 20px 100px;
 }
 
-div#userCard {
+.userCard {
     padding: 10px;
     background-color: var(--light_black);
     width: 400px;
@@ -65,12 +65,12 @@ div#userCard {
     transition: 1s;
 }
 
-div#userCard:hover {
+.userCard:hover {
     scale: 1.1;
     transition: 0.3s;
 }
 
-button#userInfo {
+.userInfoBtn {
     font-weight: 700;
     color: var(--light_black);
     background-color: var(--silver);
@@ -83,7 +83,7 @@ button#userInfo {
     transition: 1s;
 }
 
-button#userInfo:hover {
+.userInfoBtn:hover {
     color: var(--white);
     background-color: var(--orange);
     transition: 0.3s;
@@ -139,7 +139,7 @@ div#postsHolder {
 
 }
 
-div#postHolder {
+.postHolder {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -154,12 +154,12 @@ div#postHolder {
     transition: 1s;
 }
 
-div#postHolder:hover {
+.postHolder:hover {
     scale: 1.1;
     transition: 0.3s;
 }
 
-button#postInfo {
+.postInfo {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     height: 25px;
@@ -171,7 +171,7 @@ button#postInfo {
     transition: 1s;
 }
 
-button#postInfo:hover {
+.postInfo:hover {
     color: var(--white);
     background-color: var(--orange);
     transition: 0.3s;
@@ -208,7 +208,7 @@ div#commentsHolder {
     margin: 20px auto;
 }
 
-div#commentHolder {
+.commentHolder {
     width: 310px;
     height: 350px;
     background-color: var(--light_black);
@@ -221,7 +221,7 @@ div#commentHolder {
 
 }
 
-div#commentHolder:hover {
+.commentHolder:hover {
     transition: 0.3s;
     scale: 1.05;
 }

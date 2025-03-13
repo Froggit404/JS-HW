@@ -2,15 +2,16 @@ const url = new URLSearchParams(location.search);
 const postId = url.get("postId");
 if (!postId) {
     alert("Can't find a post")
+    throw new Error("Can't find post id")
 }
 
 fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
     .then(value => value.json())
     .then(post => {
-            const postDetailsHolder = document.createElement("div");
-            postDetailsHolder.id = 'postDetailsHolder'
-            postDetailsHolder.innerHTML =
-                `
+        const postDetailsHolder = document.createElement("div");
+        postDetailsHolder.id = 'postDetailsHolder'
+        postDetailsHolder.innerHTML =
+            `
                   <div id="idBlock">
                   <p><b>User id:</b> ${post.userId}</p>
                   <p><b>Post id:</b> ${post.id}</p>
@@ -20,7 +21,7 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
                   <p><b>Body:</b> ${post.body}</p>
                   </div>
                 `
-
+        document.body.appendChild(postDetailsHolder)
 
         fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
             .then(value => value.json())
@@ -30,7 +31,8 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
 
                 for (const comment of comments) {
                     const commentHolder = document.createElement("div");
-                    commentHolder.id = 'commentHolder'
+                    // commentHolder.id = 'commentHolder'
+                    commentHolder.classList.add('commentHolder')
                     commentHolder.innerHTML =
                         `
                 <p><b>Id:</b> ${comment.id}</p>
@@ -41,7 +43,7 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
                     commentsHolder.appendChild(commentHolder)
 
                 }
-                document.body.append(postDetailsHolder, commentsHolder)
+                document.body.appendChild(commentsHolder)
             })
 
 

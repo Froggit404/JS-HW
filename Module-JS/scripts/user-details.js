@@ -2,6 +2,7 @@ const url = new URLSearchParams(location.search);
 const userId = url.get("id")
 if (!userId) {
     alert("Can't find a user")
+    throw new Error("Can't find user id")
 }
 
 
@@ -41,7 +42,6 @@ fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
            </div>
         `
 
-
         const postButton = document.createElement("button");
         postButton.id = 'postButton'
         postButton.innerText = 'Post of current user'
@@ -61,13 +61,15 @@ fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
                 .then(posts => {
                     for (const post of posts) {
                         const postHolder = document.createElement("div");
-                        postHolder.id = 'postHolder'
+                        postHolder.classList.add('postHolder')
+                        // postHolder.id = 'postHolder'
                         postHolder.innerHTML =
                             `
                             <p><b>Post title:</b> ${post.title}</p>
                             `
                         const postInfo = document.createElement("button");
-                        postInfo.id = 'postInfo'
+                        postInfo.classList.add('postInfo')
+                        // postInfo.id = 'postInfo'
                         postInfo.innerText = 'Post details'
                         postInfo.onclick = function () {
                             location.href = `post-details.html?postId=${post.id}`
